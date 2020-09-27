@@ -6,7 +6,6 @@ const sitemap = require('nextjs-sitemap-generator');
 
 sitemap({
   baseUrl: isProd ? 'https://mmenu-cms.netlify.app' : 'http://localhost:3000',
-  pagesDirectory: __dirname + "/src/pages",
   pagesDirectory: __dirname + "/.next/server/pages",
   targetDirectory : 'public/static/',
   ignoredPaths: ['products/item/[slug]'],
