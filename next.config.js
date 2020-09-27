@@ -9,6 +9,9 @@ sitemap({
   pagesDirectory: __dirname + "/.next/server/pages",
   targetDirectory : 'public/static/',
   ignoredPaths: ['products/item/[slug]'],
+  ignoredExtensions: ["js", "map"],
+  changefreq: "",
+  priority: "",
 });
 
 module.exports = withPlugins(
