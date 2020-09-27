@@ -35,7 +35,8 @@ const Layout = ({ children, metas }: LayoutProps) => (
         description: metas.description,
         images: [{ url: `https://mmenu-cms.netlify.app${metas.image}` }],
         site_name: 'Meu Menu',
-        locale: 'pt_BR'
+        locale: 'pt_BR',
+        type: 'website'
       }}
       twitter={{
         handle: '@ribeiroevandro',
