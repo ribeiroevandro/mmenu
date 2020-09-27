@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Layout from '~/components/Layout'
+import ProductItem from '~/components/ProductItem'
+import Products from '~/components/Products'
 
 const importProducts = async () => {
 
@@ -18,25 +20,11 @@ const importProducts = async () => {
 
 const Product = ({ productsList }) => (
   <Layout>
-    {productsList.map((item) => (
-      <div key={item.slug} className="item">
-        <Link href="/product/item/[slug]" as={`/product/item/${item.slug}`}>
-          <a>
-            <img src={item.attributes.thumbnail} />
-            <h2>{item.attributes.title}</h2>
-          </a>
-        </Link>
-      </div>
-    ))}
-    <style jsx>{`
-      .post {
-        text-align: center;
-      }
-      img {
-        max-width: 100%;
-        max-height: 300px;
-      }
-    `}</style>
+    <Products>
+      {productsList.map((item) => (
+        <ProductItem key={item.slug} data={item} />
+      ))}
+    </Products>
   </Layout>
 )
 

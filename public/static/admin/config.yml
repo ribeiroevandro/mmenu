@@ -13,7 +13,7 @@ slug:
   sanitize_replacement: '_'
 collections:
   - name: 'pages'
-    label: 'Pages'
+    label: 'Páginas'
     files:
       - label: 'Home'
         name: 'home'
@@ -23,13 +23,20 @@ collections:
           - { label: 'Publish Date', name: 'date', widget: 'datetime' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - label: 'Products'
+  - label: 'Produtos'
     name: 'products'
     folder: 'src/content/products'
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Nome', name: 'title', widget: 'string', required: true }
+      - {
+          label: 'Preço',
+          name: 'price',
+          widget: 'number',
+          value_type: 'int',
+          required: true
+        }
       - {
           label: 'Publish Date',
           name: 'date',
@@ -37,7 +44,7 @@ collections:
           required: true,
         }
       - {
-          label: 'Featured Image',
+          label: 'Imagens',
           name: 'thumbnail',
           widget: 'image',
           required: true,
