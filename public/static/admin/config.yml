@@ -42,6 +42,7 @@ collections:
           name: 'date',
           widget: 'datetime',
           required: true,
+          format: 'YYYY-MM-DD hh:mm:ss',
         }
       - {
           label: 'Imagem Destaque',
@@ -62,3 +63,4 @@ collections:
           }
         }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+      - { label: "Mostrar em destaque?", name: "home_page", widget: "boolean", default: false}

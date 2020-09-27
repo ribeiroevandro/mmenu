@@ -16,16 +16,16 @@ interface Props {
 
 const ProductItem = ({ data }: Props) => {
 
-  const formatedMoney = data.attributes.price.toLocaleString('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  })
-
   return (
     <S.Container>
       <div>
         <h1>{data.attributes.title}</h1>
-        <p>{formatedMoney}</p>
+        <p>
+          {data.attributes.price.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          })}
+        </p>
       </div>
       <figure>
         <img src={data.attributes.thumbnail_featured} alt={data.attributes.title} />
