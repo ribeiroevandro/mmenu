@@ -4,7 +4,7 @@ import * as S from './styles'
 
 const Layout = ({ children }) => (
   <>
-    <S.Nav>      
+    <S.Nav>
       <ul>
         <li>
           <Link href="/">
@@ -12,13 +12,8 @@ const Layout = ({ children }) => (
           </Link>
         </li>
         <li>
-          <Link href="/blog">
-            <a>blog</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/about">
-            <a>about</a>
+          <Link href="/product">
+            <a>Cardápio</a>
           </Link>
         </li>
       </ul>
