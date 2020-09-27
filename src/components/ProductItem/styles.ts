@@ -68,5 +68,24 @@ export const Container = styled.article<Props>`
     }
   }
 
+  footer {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+
+      li:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+  }
+
   ${({ modal }) => !modal ? modalClosed : modalOpen}
 `;

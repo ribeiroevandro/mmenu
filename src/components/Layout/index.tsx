@@ -40,7 +40,7 @@ const Layout = ({ children, metas }: LayoutProps) => (
       twitter={{
         handle: '@ribeiroevandro',
         site: '@site',
-        cardType: 'summary_large_image'
+        cardType: 'summary_large_image',
       }}
     />
     <S.Nav>

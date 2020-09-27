@@ -1,4 +1,6 @@
 import { BiLinkExternal } from "react-icons/bi";
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from 'react-share'
+
 import { useCart } from "~/hooks/cart";
 
 import * as S from './styles'
@@ -60,9 +62,24 @@ const ProductItem = ({ data, modalActived, update }: Props) => {
           </p>
         </div>
         <footer>
+          <p>Compartilhe nas redes sociais</p>
           <ul>
             <li>
-              <BiLinkExternal size={20} />
+              <FacebookShareButton
+                url={`https://mmenu-cms.netlify.app/products/item/${data.slug}`}
+                quote={data.attributes.title}
+                className="Demo__some-network__share-button"
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>
+            </li>
+            <li>
+              <TwitterShareButton
+                url={`https://mmenu-cms.netlify.app/products/item/${data.slug}`}
+                className="Demo__some-network__share-button"
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>
             </li>
           </ul>
         </footer>

@@ -38,7 +38,10 @@ const Product = ({ productsList }) => {
       </Products>
       <Modal
         isOpen={isModal}
-        onClickClose={openModal}
+        onClickClose={() => {
+          openModal()
+          setSelected({} as ProductItemProps)
+        }}
         component={() => <ProductItem data={selected}  modalActived={false} />}
       />
     </Layout>
