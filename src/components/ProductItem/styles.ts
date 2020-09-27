@@ -7,13 +7,21 @@ export const Container = styled.article`
   padding: 24px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 
   div {
     /* background-color: #fff; */
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+
+    p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
   }
 
   figure {

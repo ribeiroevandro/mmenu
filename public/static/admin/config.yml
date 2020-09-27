@@ -31,8 +31,12 @@ collections:
     create: true
     slug: '{{slug}}'
     preview_path: '{{slug}}'
+    editor: {
+      preview: false
+    }
     fields:
       - { label: 'Nome', name: 'title', widget: 'string', required: true }
+      - { label: 'Descrição', name: 'description', widget: 'string' }
       - {
           label: 'Preço',
           name: 'price',

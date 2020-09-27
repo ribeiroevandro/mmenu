@@ -4,6 +4,7 @@ import { NextSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 
 import GlobalStyle from '../styles/global.styles'
+import AppProvider from '~/hooks'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -32,7 +33,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         }}
       />
       <GlobalStyle />
-      <Component {...pageProps} />
+      <AppProvider>
+        <Component {...pageProps} />
+      </AppProvider>
     </>
   )
 }
