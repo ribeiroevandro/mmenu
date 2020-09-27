@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: devspaceapp/mmenu
+  repo: ribeiroevandro/mmenu
   branch: main
   local_backend: true
 
