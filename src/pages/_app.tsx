@@ -12,15 +12,15 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="theme-color" content="#121421" />
       </Head>
       <NextSeo
-        title="DevSpace - Uma nova experiência ao buscar novas oportunidades..."
-        description="Profissionais de Front-End, Back-End, Mobile e demais áreas, com o DevSpace você terá a melhor experiência ao buscar uma nova oportunidade."
-        canonical="https://devspace.app/"
+        title="Meu Menu"
+        description="O jeito mais fácil de pedir delivery de comida. A maior lista de restaurantes online em sua cidade. Faça seu pedido pela internet e receba em casa."
+        canonical="https://mmenu-cms.netlify.app/"
         openGraph={{
-          url: 'https://devspace.app/',
+          url: 'https://mmenu-cms.netlify.app/',
           title:
-            'DevSpace - Uma nova experiência ao buscar novas oportunidades...',
+            'Meu Menu',
           description:
-            'Profissionais de Front-End, Back-End, Mobile e demais áreas, com o DevSpace você terá a melhor experiência ao buscar uma nova oportunidade.',
+            'O jeito mais fácil de pedir delivery de comida. A maior lista de restaurantes online em sua cidade. Faça seu pedido pela internet e receba em casa.',
           images: [{ url: 'https://devspace.app/img/cover.png' }],
           site_name: 'DevSpace',
           locale: 'pt_BR'
