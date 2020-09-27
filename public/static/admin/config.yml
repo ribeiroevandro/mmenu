@@ -48,5 +48,10 @@ collections:
           name: 'thumbnail',
           widget: 'image',
           required: true,
+          media_library: {
+            config: {
+              multiple: true
+            }
+          }
         }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }

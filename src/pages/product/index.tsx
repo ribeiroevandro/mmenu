@@ -22,7 +22,10 @@ const Product = ({ productsList }) => (
   <Layout>
     <Products>
       {productsList.map((item) => (
-        <ProductItem key={item.slug} data={item} />
+        <>
+          {console.log(item)}
+          <ProductItem key={item.slug} data={item} />
+        </>
       ))}
     </Products>
   </Layout>
