@@ -32,7 +32,6 @@ const Product = ({ productsList }) => {
           <ProductItem key={item.slug} data={item} update={setSelected} modalActived />
         ))}
       </Products>
-      {console.log(selected)}
       <Modal
         isOpen={isModal}
         onClickClose={openModal}

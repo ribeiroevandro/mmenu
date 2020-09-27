@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import Home from '~/components/Home'
 import Layout from '~/components/Layout'
-import ProductItem from '~/components/ProductItem'
+import Modal from '~/components/Modal'
+import ProductItem, { ProductItemProps } from '~/components/ProductItem'
 import Products from '~/components/Products'
+import { useCart } from '~/hooks/cart'
 
 const importProducts = async () => {
 
@@ -19,18 +22,30 @@ const importProducts = async () => {
 }
 
 
-const Index = ({ productsList }) => (
-  <Layout>
-    <Products>
-      {productsList
-      .filter((item) => item.attributes.home_page)
-      .map((item) => (
-        <ProductItem key={item.slug} data={item} />
-      ))}
-    </Products>
-  </Layout>
-)
+const Index = ({ productsList }) => {
+  const { isModal, openModal } = useCart()
+  const [selected, setSelected] = useState<ProductItemProps>({} as ProductItemProps)
 
+  return (
+    <Layout>
+      <Products>
+        {productsList
+          .filter((item) => item.attributes.home_page)
+          .map((item) => (
+          <ProductItem key={item.slug} data={item} update={setSelected} modalActived />
+        ))}
+      </Products>
+      <Modal
+        isOpen={isModal}
+        onClickClose={() => {
+          openModal()
+          setSelected({} as ProductItemProps)
+        }}
+        component={() => <ProductItem data={selected}  modalActived={false} />}
+      />
+    </Layout>
+  )
+}
 export async function getStaticProps() {
   const productsList = await importProducts()
 
