@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
   height: 100%;
+  padding: 0 var(--space);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1120px;
 `;
 
 export const Nav = styled.nav`

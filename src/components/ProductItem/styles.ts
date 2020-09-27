@@ -1,13 +1,44 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.article`
-  background-color: #ccc;
+interface Props {
+  modal?: boolean;
+  onClick?: () => void;
+}
+
+const modalOpen = css`
+  display: grid;
+  div {
+    p {
+      order: 2;
+      color: red;
+    }
+  }
+
+  figure {
+    order: 1;
+    background-color: pink;
+    width: 100%;
+  }
+`;
+const modalClosed = css`
+  cursor: pointer;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid rgba(63, 61, 86, 0.75);
+  transition: all 0.2s;
+
+  &:hover {
+    -webkit-box-shadow: -1px 1px 10px 5px rgba(63, 61, 86, 0.75);
+    -moz-box-shadow: -1px 1px 10px 5px rgba(63, 61, 86, 0.75);
+    box-shadow: -1px 1px 10px 5px rgba(63, 61, 86, 0.75);
+  }
+`;
+
+export const Container = styled.article<Props>`
   border-radius: 8px;
   padding: 24px;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
 
   div {
     /* background-color: #fff; */
@@ -33,4 +64,6 @@ export const Container = styled.article`
       width: 100%;
     }
   }
+
+  ${({ modal }) => !modal ? modalClosed : modalOpen}
 `;

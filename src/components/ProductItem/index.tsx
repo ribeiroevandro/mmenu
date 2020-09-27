@@ -40,7 +40,22 @@ const ProductItem = ({ data }: Props) => {
         </figure>
       </S.Container>
       <Modal isOpen={isModal} onClickClose={openModal}>
-        <h1>teste</h1>
+        {console.log(isModal)}
+        <S.Container modal={isModal}>
+          <div>
+            <h1>{data.attributes.title}</h1>
+            <figure>
+              <img src={data.attributes.thumbnail_featured} alt={data.attributes.title} />
+            </figure>
+            <p>{data.attributes.description}</p>
+            <p>
+              {data.attributes.price.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
+            </p>
+          </div>
+        </S.Container>
       </Modal>
     </>
   )

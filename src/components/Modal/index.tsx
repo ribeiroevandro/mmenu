@@ -6,7 +6,7 @@ import * as S from './styles';
 
 interface ModalProps {
   isOpen: boolean;
-  onClickClose(): void;
+  onClickClose?(): void;
 }
 
 const Modal: React.FC<ModalProps> = ({ children, isOpen, onClickClose }) => {
