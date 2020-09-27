@@ -27,7 +27,9 @@ const Product = ({ productsList }) => {
 
   return (
     <Layout metas={{
-      title: 'Cardápio'
+      title: 'Cardápio',
+      image: '/static/img/cover.png',
+      description: 'teste'
     }}>
       <Products>
         {productsList.map((item) => (

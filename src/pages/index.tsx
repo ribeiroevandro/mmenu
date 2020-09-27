@@ -30,7 +30,7 @@ const Index = ({ productsList }) => {
     <Layout metas={{
       title: 'O jeito mais fácil de pedir delivery de comida. A maior lista de restaurantes online em sua cidade. Faça seu pedido pela internet e receba em casa.',
       url: '',
-      image: '/static/cover.png'
+      image: '/static/img/cover.png'
     }}>
       <Products>
         {productsList
