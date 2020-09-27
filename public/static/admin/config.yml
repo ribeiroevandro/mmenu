@@ -36,7 +36,7 @@ collections:
     }
     fields:
       - { label: 'Nome', name: 'title', widget: 'string', required: true }
-      - { label: 'Descrição', name: 'description', widget: 'string' }
+      - { label: 'Descrição', name: 'description', widget: 'string', required: false }
       - {
           label: 'Preço',
           name: 'price',
