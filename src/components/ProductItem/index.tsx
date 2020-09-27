@@ -31,6 +31,7 @@ const ProductItem = ({ data, modalActived, update }: Props) => {
       }}>
         <div>
           <h1>{data.attributes.title}</h1>
+          <h2>teste</h2>
           <p>{data.attributes.description}</p>
           <p>
             {data.attributes.price.toLocaleString('pt-BR', {

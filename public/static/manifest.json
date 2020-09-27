@@ -1,0 +1,23 @@
+{
+  "name": "Meu Menu",
+  "short_name": "Meu Menu",
+  "background_color": "#121421",
+  "theme_color": "#06092B",
+  "description": "O jeito mais fácil de pedir delivery de comida. A maior lista de restaurantes online em sua cidade. Faça seu pedido pela internet e receba em casa.",
+  "lang": "pt-BR",
+  "start_url": "/?utm_source=PWA",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "static/img/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

@@ -2,13 +2,18 @@ import fs from 'fs'
 import path from 'path'
 import Layout from '~/components/Layout'
 
-const Item = ({ blogpost }) => {
+const Item = ({ blogpost, slug }) => {
   if (!blogpost) return <div>not found</div>
 
   const { html, attributes } = blogpost
 
   return (
-    <Layout>
+    <Layout metas={{
+      title: attributes.title,
+      description: attributes.description,
+      image: attributes.thumbnail_featured,
+      url: `products/item/${slug}`
+    }}>
       <article>
         <h1>{attributes.title}</h1>
         <img src={attributes.thumbnail_featured} />
@@ -45,13 +50,15 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params
 
+
   const blogpost = await import(`~/content/products/${slug}.md`).catch(
     () => null
-  )
+    )
 
   return {
     props: {
       blogpost: blogpost.default,
+      slug
     },
   }
 }

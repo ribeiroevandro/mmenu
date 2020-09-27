@@ -26,7 +26,9 @@ const Product = ({ productsList }) => {
   const [selected, setSelected] = useState<ProductItemProps>({} as ProductItemProps)
 
   return (
-    <Layout>
+    <Layout metas={{
+      title: 'Cardápio'
+    }}>
       <Products>
         {productsList.map((item) => (
           <ProductItem key={item.slug} data={item} update={setSelected} modalActived />

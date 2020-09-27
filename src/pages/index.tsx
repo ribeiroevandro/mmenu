@@ -27,7 +27,11 @@ const Index = ({ productsList }) => {
   const [selected, setSelected] = useState<ProductItemProps>({} as ProductItemProps)
 
   return (
-    <Layout>
+    <Layout metas={{
+      title: 'O jeito mais fácil de pedir delivery de comida. A maior lista de restaurantes online em sua cidade. Faça seu pedido pela internet e receba em casa.',
+      url: '',
+      image: '/static/cover.png'
+    }}>
       <Products>
         {productsList
           .filter((item) => item.attributes.home_page)

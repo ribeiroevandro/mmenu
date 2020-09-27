@@ -3,7 +3,9 @@ import Layout from '~/components/Layout'
 
 
 const Index = () => (
-  <Layout>
+  <Layout metas={{
+    title: 'Error'
+  }}>
     <Home />
   </Layout>
 )
