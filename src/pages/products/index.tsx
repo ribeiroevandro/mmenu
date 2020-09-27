@@ -1,7 +1,10 @@
 import Link from 'next/link'
+import { useState } from 'react'
 import Layout from '~/components/Layout'
-import ProductItem from '~/components/ProductItem'
+import Modal from '~/components/Modal'
+import ProductItem, { ProductItemProps } from '~/components/ProductItem'
 import Products from '~/components/Products'
+import { useCart } from '~/hooks/cart'
 
 const importProducts = async () => {
 
@@ -18,15 +21,26 @@ const importProducts = async () => {
   )
 }
 
-const Product = ({ productsList }) => (
-  <Layout>
-    <Products>
-      {productsList.map((item) => (
-        <ProductItem key={item.slug} data={item} />
-      ))}
-    </Products>
-  </Layout>
-)
+const Product = ({ productsList }) => {
+  const { isModal, openModal } = useCart()
+  const [selected, setSelected] = useState<ProductItemProps>({} as ProductItemProps)
+
+  return (
+    <Layout>
+      <Products>
+        {productsList.map((item) => (
+          <ProductItem key={item.slug} data={item} update={setSelected} modalActived />
+        ))}
+      </Products>
+      {console.log(selected)}
+      <Modal
+        isOpen={isModal}
+        onClickClose={openModal}
+        component={() => <ProductItem data={selected}  modalActived={false} />}
+      />
+    </Layout>
+  )
+}
 
 export async function getStaticProps() {
   const productsList = await importProducts()

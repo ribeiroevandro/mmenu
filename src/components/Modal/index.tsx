@@ -1,15 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { IconBaseProps } from 'react-icons';
+
 
 import * as S from './styles';
 
+interface ProductItemProps {
+  slug: string;
+  attributes: {
+    title: string;
+    date: string;
+    thumbnail_featured: string;
+    price: number;
+    description: string;
+  }
+}
+
+interface Bizarro {
+
+}
 
 interface ModalProps {
   isOpen: boolean;
   onClickClose?(): void;
+  component?: React.ComponentType<IconBaseProps>;
 }
 
-const Modal: React.FC<ModalProps> = ({ children, isOpen, onClickClose }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClickClose, component: Component }) => {
   if (!isOpen) {
     return null;
   }
@@ -23,7 +40,7 @@ const Modal: React.FC<ModalProps> = ({ children, isOpen, onClickClose }) => {
           <button type="button" onClick={onClickClose}>
             X
           </button>
-          {children}
+          {Component && <Component  />}
         </div>
       </div>
     </S.Container>,

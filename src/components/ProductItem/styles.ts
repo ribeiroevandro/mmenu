@@ -1,8 +1,11 @@
 import styled, { css } from 'styled-components';
+import { ProductItemProps } from '.';
 
 interface Props {
   modal?: boolean;
   onClick?: () => void;
+  update?(item: ProductItemProps): void
+
 }
 
 const modalOpen = css`

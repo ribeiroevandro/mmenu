@@ -3,8 +3,9 @@ import { useCart } from "~/hooks/cart";
 import Modal from "~/components/Modal";
 
 import * as S from './styles'
+import { useCallback } from "react";
 
-interface ProductItemProps {
+export interface ProductItemProps {
   slug: string;
   attributes: {
     title: string;
@@ -16,15 +17,20 @@ interface ProductItemProps {
 }
 
 interface Props {
-  data: ProductItemProps
+  modalActived?: boolean;
+  data: ProductItemProps;
+  update?(item: ProductItemProps): void
 }
 
-const ProductItem = ({ data }: Props) => {
+const ProductItem = ({ data, modalActived, update }: Props) => {
   const { isModal, openModal } = useCart()
 
   return (
-    <>
-      <S.Container onClick={openModal}>
+    modalActived ? (
+      <S.Container onClick={() => {
+        openModal()
+        update(data)
+      }}>
         <div>
           <h1>{data.attributes.title}</h1>
           <p>{data.attributes.description}</p>
@@ -39,25 +45,23 @@ const ProductItem = ({ data }: Props) => {
           <img src={data.attributes.thumbnail_featured} alt={data.attributes.title} />
         </figure>
       </S.Container>
-      <Modal isOpen={isModal} onClickClose={openModal}>
-        {console.log(isModal)}
-        <S.Container modal={isModal}>
-          <div>
-            <h1>{data.attributes.title}</h1>
-            <figure>
-              <img src={data.attributes.thumbnail_featured} alt={data.attributes.title} />
-            </figure>
-            <p>{data.attributes.description}</p>
-            <p>
-              {data.attributes.price.toLocaleString('pt-BR', {
-                style: 'currency',
-                currency: 'BRL',
-              })}
-            </p>
-          </div>
-        </S.Container>
-      </Modal>
-    </>
+    ) : (
+      <S.Container modal={isModal}>
+        <div>
+          <h1>{data.attributes.title}</h1>
+          <figure>
+            <img src={data.attributes.thumbnail_featured} alt={data.attributes.title} />
+          </figure>
+          <p>{data.attributes.description}</p>
+          <p>
+            {data.attributes.price.toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
+          </p>
+        </div>
+      </S.Container>
+    )
   )
 }
 
