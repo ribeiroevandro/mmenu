@@ -32,6 +32,7 @@
     "@types/webpack-env": "^1.15.3",
     "babel-plugin-styled-components": "^1.11.1",
     "frontmatter-markdown-loader": "^2.0.0",
+    "nextjs-sitemap-generator": "^1.1.1",
     "typescript": "^4.0.3"
   }
 }
