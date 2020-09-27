@@ -38,6 +38,9 @@ const Layout = ({ children, metas }: LayoutProps) => (
         locale: 'pt_BR',
         type: 'website'
       }}
+      facebook={{
+        appId: '351405896048475'
+      }}
       twitter={{
         handle: '@ribeiroevandro',
         site: '@site',
