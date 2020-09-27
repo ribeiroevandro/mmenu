@@ -45,13 +45,6 @@ collections:
           required: true
         }
       - {
-          label: 'Publish Date',
-          name: 'date',
-          widget: 'datetime',
-          required: true,
-          format: 'YYYY-MM-DD hh:mm:ss',
-        }
-      - {
           label: 'Imagem Destaque',
           name: 'thumbnail_featured',
           widget: 'image',
