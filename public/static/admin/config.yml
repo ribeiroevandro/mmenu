@@ -11,9 +11,11 @@ slug:
   encoding: 'ascii'
   clean_accents: true
   sanitize_replacement: '_'
+
 collections:
   - name: 'pages'
     label: 'Páginas'
+    show_preview_links: true
     files:
       - label: 'Home'
         name: 'home'
@@ -28,6 +30,7 @@ collections:
     folder: 'src/content/products'
     create: true
     slug: '{{slug}}'
+    preview_path: '{{slug}}'
     fields:
       - { label: 'Nome', name: 'title', widget: 'string', required: true }
       - {
