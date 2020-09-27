@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.article`
-  background-color: #999;
+  background-color: #ccc;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 24px;
@@ -9,7 +9,7 @@ export const Container = styled.article`
   justify-content: space-between;
 
   div {
-    background-color: #fff;
+    /* background-color: #fff; */
     flex: 1;
     display: flex;
     flex-direction: column;

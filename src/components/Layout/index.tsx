@@ -12,7 +12,7 @@ const Layout = ({ children }) => (
           </Link>
         </li>
         <li>
-          <Link href="/product">
+          <Link href="/products">
             <a>Cardápio</a>
           </Link>
         </li>

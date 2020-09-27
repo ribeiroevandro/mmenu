@@ -21,10 +21,9 @@ const importProducts = async () => {
 
 const Index = ({ productsList }) => (
   <Layout>
-    <Home />
     <Products>
       {productsList
-      .filter((item) => item.home_page)
+      .filter((item) => item.attributes.home_page)
       .map((item) => (
         <ProductItem key={item.slug} data={item} />
       ))}
