@@ -20,7 +20,7 @@ const Product = ({ productsList }) => (
   <Layout>
     {productsList.map((item) => (
       <div key={item.slug} className="item">
-        <Link href="/products/item/[slug]" as={`/products/item/${item.slug}`}>
+        <Link href="/product/item/[slug]" as={`/product/item/${item.slug}`}>
           <a>
             <img src={item.attributes.thumbnail} />
             <h2>{item.attributes.title}</h2>
