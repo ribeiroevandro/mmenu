@@ -6,6 +6,7 @@ interface ProductItemProps {
     title: string;
     date: string;
     thumbnail_featured: string;
+    price: number;
   }
 }
 
@@ -13,11 +14,24 @@ interface Props {
   data: ProductItemProps
 }
 
-const ProductItem = ({ data }: Props) => (
-  <S.Container>
-    <img src={data.attributes.thumbnail_featured} alt={data.attributes.title}/>
-    <h1>{data.attributes.title}</h1>
-  </S.Container>
-)
+const ProductItem = ({ data }: Props) => {
+
+  const formatedMoney = data.attributes.price.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+
+  return (
+    <S.Container>
+      <div>
+        <h1>{data.attributes.title}</h1>
+        <p>{formatedMoney}</p>
+      </div>
+      <figure>
+        <img src={data.attributes.thumbnail_featured} alt={data.attributes.title} />
+      </figure>
+    </S.Container>
+  )
+}
 
 export default ProductItem

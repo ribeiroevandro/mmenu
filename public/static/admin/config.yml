@@ -44,17 +44,16 @@ collections:
           required: true,
         }
       - {
-          label: 'Destaque',
+          label: 'Imagem Destaque',
           name: 'thumbnail_featured',
           widget: 'image',
           required: true,
-          allow_multiple: true
         }
       - {
           label: 'Galeria',
           name: 'gallery',
           widget: 'list',
-          required: true,
+          required: false,
           summary: '{{fields.thumbnail_featured}}',
           field: {
             label: 'Imagem',
