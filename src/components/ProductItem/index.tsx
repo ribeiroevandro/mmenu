@@ -5,7 +5,7 @@ interface ProductItemProps {
   attributes: {
     title: string;
     date: string;
-    thumbnail: string;
+    thumbnail_featured: string;
   }
 }
 
@@ -15,7 +15,7 @@ interface Props {
 
 const ProductItem = ({ data }: Props) => (
   <S.Container>
-    <img src={data.attributes.thumbnail} alt={data.attributes.title}/>
+    <img src={data.attributes.thumbnail_featured} alt={data.attributes.title}/>
     <h1>{data.attributes.title}</h1>
   </S.Container>
 )

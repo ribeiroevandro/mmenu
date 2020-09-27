@@ -44,10 +44,22 @@ collections:
           required: true,
         }
       - {
-          label: 'Imagens',
-          name: 'thumbnail',
+          label: 'Destaque',
+          name: 'thumbnail_featured',
           widget: 'image',
           required: true,
           allow_multiple: true
+        }
+      - {
+          label: 'Galeria',
+          name: 'gallery',
+          widget: 'list',
+          required: true,
+          summary: '{{fields.thumbnail_featured}}',
+          field: {
+            label: 'Imagem',
+            name: 'thumbnail',
+            widget: 'image'
+          }
         }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
