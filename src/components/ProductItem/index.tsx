@@ -1,9 +1,7 @@
 import { BiLinkExternal } from "react-icons/bi";
 import { useCart } from "~/hooks/cart";
-import Modal from "~/components/Modal";
 
 import * as S from './styles'
-import { useCallback } from "react";
 
 export interface ProductItemProps {
   slug: string;
@@ -60,6 +58,13 @@ const ProductItem = ({ data, modalActived, update }: Props) => {
             })}
           </p>
         </div>
+        <footer>
+          <ul>
+            <li>
+              <BiLinkExternal size={20} />
+            </li>
+          </ul>
+        </footer>
       </S.Container>
     )
   )
