@@ -2,8 +2,9 @@ backend:
   name: git-gateway
   repo: ribeiroevandro/mmenu
   branch: main
+  local_backend: true
 
-media_folder: public/img
+media_folder: public/static/img
 public_folder: /img
 
 slug:
@@ -26,6 +27,26 @@ collections:
     folder: 'src/content/posts'
     create: true
     slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          required: true,
+        }
+      - {
+          label: 'Featured Image',
+          name: 'thumbnail',
+          widget: 'image',
+          required: true,
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+  - label: 'Products'
+    name: 'products'
+    folder: 'src/content/products'
+    create: true
+    slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - {
